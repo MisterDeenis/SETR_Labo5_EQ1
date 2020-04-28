@@ -1,0 +1,143 @@
+{
+  "variant": {
+    "label": "Release",
+    "keywordSettings": {
+      "buildType": "release"
+    },
+    "description": "Enable optimizations, omit debug info"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Release",
+        "projects": [
+          {
+            "buildDirectory": "/home/setr/projets/laboratoire5/PI/build",
+            "hasInstallRule": false,
+            "minimumCMakeVersion": "3.0",
+            "name": "SETR_TP5",
+            "sourceDirectory": "/home/setr/projets/laboratoire5/PI",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/setr/projets/laboratoire5/PI/build/comReceiver"
+                ],
+                "buildDirectory": "/home/setr/projets/laboratoire5/PI/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/local/lib -O2 -DNDEBUG -march=armv6zk -mfpu=vfp -mfloat-abi=hard -Ofast -funroll-loops -funsafe-math-optimizations -floop-block -flto   -Wall -Wextra -Wpedantic -Wduplicated-cond -Wlogical-op -Wnull-dereference -Wshadow -pthread",
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "pipe_com.c",
+                      "socket_com.c",
+                      "comReceiver.c"
+                    ]
+                  }
+                ],
+                "fullName": "comReceiver",
+                "isGeneratorProvided": false,
+                "linkFlags": "-rdynamic",
+                "linkLanguageFlags": "-Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/local/lib -O2 -DNDEBUG -march=armv6zk -mfpu=vfp -mfloat-abi=hard -Ofast -funroll-loops -funsafe-math-optimizations -floop-block -flto",
+                "linkLibraries": "-lrt -pthread",
+                "linkerLanguage": "CXX",
+                "name": "comReceiver",
+                "sourceDirectory": "/home/setr/projets/laboratoire5/PI",
+                "sysroot": "/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot",
+                "type": "EXECUTABLE"
+              },
+              {
+                "artifacts": [
+                  "/home/setr/projets/laboratoire5/PI/build/comEmitter"
+                ],
+                "buildDirectory": "/home/setr/projets/laboratoire5/PI/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/local/lib -O2 -DNDEBUG -march=armv6zk -mfpu=vfp -mfloat-abi=hard -Ofast -funroll-loops -funsafe-math-optimizations -floop-block -flto   -Wall -Wextra -Wpedantic -Wduplicated-cond -Wlogical-op -Wnull-dereference -Wshadow -pthread",
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "pipe_com.c",
+                      "socket_com.c",
+                      "comEmitter.c"
+                    ]
+                  }
+                ],
+                "fullName": "comEmitter",
+                "isGeneratorProvided": false,
+                "linkFlags": "-rdynamic",
+                "linkLanguageFlags": "-Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/local/lib -O2 -DNDEBUG -march=armv6zk -mfpu=vfp -mfloat-abi=hard -Ofast -funroll-loops -funsafe-math-optimizations -floop-block -flto",
+                "linkLibraries": "-lrt -pthread",
+                "linkerLanguage": "CXX",
+                "name": "comEmitter",
+                "sourceDirectory": "/home/setr/projets/laboratoire5/PI",
+                "sysroot": "/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot",
+                "type": "EXECUTABLE"
+              },
+              {
+                "artifacts": [
+                  "/home/setr/projets/laboratoire5/PI/build/audioEmitter"
+                ],
+                "buildDirectory": "/home/setr/projets/laboratoire5/PI/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/local/lib -O2 -DNDEBUG -march=armv6zk -mfpu=vfp -mfloat-abi=hard -Ofast -funroll-loops -funsafe-math-optimizations -floop-block -flto   -Wall -Wextra -Wpedantic -Wduplicated-cond -Wlogical-op -Wnull-dereference -Wshadow -pthread",
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "pipe_com.c",
+                      "audio.c",
+                      "audioEmitter.c"
+                    ]
+                  }
+                ],
+                "fullName": "audioEmitter",
+                "isGeneratorProvided": false,
+                "linkFlags": "-rdynamic",
+                "linkLanguageFlags": "-Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/local/lib -O2 -DNDEBUG -march=armv6zk -mfpu=vfp -mfloat-abi=hard -Ofast -funroll-loops -funsafe-math-optimizations -floop-block -flto",
+                "linkLibraries": "-lrt -lasound -pthread",
+                "linkerLanguage": "CXX",
+                "name": "audioEmitter",
+                "sourceDirectory": "/home/setr/projets/laboratoire5/PI",
+                "sysroot": "/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot",
+                "type": "EXECUTABLE"
+              },
+              {
+                "artifacts": [
+                  "/home/setr/projets/laboratoire5/PI/build/audioReceiver"
+                ],
+                "buildDirectory": "/home/setr/projets/laboratoire5/PI/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/local/lib -O2 -DNDEBUG -march=armv6zk -mfpu=vfp -mfloat-abi=hard -Ofast -funroll-loops -funsafe-math-optimizations -floop-block -flto   -Wall -Wextra -Wpedantic -Wduplicated-cond -Wlogical-op -Wnull-dereference -Wshadow -pthread",
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "pipe_com.c",
+                      "audio.c",
+                      "audioReceiver.c"
+                    ]
+                  }
+                ],
+                "fullName": "audioReceiver",
+                "isGeneratorProvided": false,
+                "linkFlags": "-rdynamic",
+                "linkLanguageFlags": "-Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/local/lib -O2 -DNDEBUG -march=armv6zk -mfpu=vfp -mfloat-abi=hard -Ofast -funroll-loops -funsafe-math-optimizations -floop-block -flto",
+                "linkLibraries": "-lrt -lasound -pthread",
+                "linkerLanguage": "CXX",
+                "name": "audioReceiver",
+                "sourceDirectory": "/home/setr/projets/laboratoire5/PI",
+                "sysroot": "/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot",
+                "type": "EXECUTABLE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.9944146551700577",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}

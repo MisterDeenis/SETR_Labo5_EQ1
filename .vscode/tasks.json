@@ -1,0 +1,83 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "sendToPi",
+            "type": "shell",
+            "command": "./sendToPi.sh ${workspaceFolder} all",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+
+        /*{
+            "label": "syncAndStartGDBserveur",
+            "type": "shell",
+            "command": "./syncAndStartGDB.sh ${workspaceFolder} serveur 4560",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "syncAndStartGDBclient",
+            "type": "shell",
+            "command": "./syncAndStartGDB.sh ${workspaceFolder} client 4561",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "syncAndStartGDBpasse_bas",
+            "type": "shell",
+            "command": "./syncAndStartGDB.sh ${workspaceFolder} passe_bas 4562",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "syncAndStartGDBpasse_haut",
+            "type": "shell",
+            "command": "./syncAndStartGDB.sh ${workspaceFolder} passe_haut 4563",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "syncAndStartGDBdelai",
+            "type": "shell",
+            "command": "./syncAndStartGDB.sh ${workspaceFolder} delai 4564",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "syncAndStartGDBdistorsion_amp",
+            "type": "shell",
+            "command": "./syncAndStartGDB.sh ${workspaceFolder} distorsion_amp 4565",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "toutSynchroniser",
+            "type": "shell",
+            "command": "./syncAndStartGDB.sh ${workspaceFolder} all",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]*/
+}
