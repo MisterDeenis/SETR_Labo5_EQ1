@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/setr/projets/laboratoire5/PI
+CMAKE_SOURCE_DIR = /home/setr/projet/repo/SETR_Labo5_EQ1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/setr/projets/laboratoire5/PI/build
+CMAKE_BINARY_DIR = /home/setr/projet/repo/SETR_Labo5_EQ1/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/setr/projets/laboratoire5/PI/build/CMakeFiles /home/setr/projets/laboratoire5/PI/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles /home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/setr/projets/laboratoire5/PI/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -246,6 +246,36 @@ audioReceiver.c.s:
 	$(MAKE) -f CMakeFiles/audioReceiver.dir/build.make CMakeFiles/audioReceiver.dir/audioReceiver.c.s
 .PHONY : audioReceiver.c.s
 
+bluetooth_com.o: bluetooth_com.c.o
+
+.PHONY : bluetooth_com.o
+
+# target to build an object file
+bluetooth_com.c.o:
+	$(MAKE) -f CMakeFiles/comReceiver.dir/build.make CMakeFiles/comReceiver.dir/bluetooth_com.c.o
+	$(MAKE) -f CMakeFiles/comEmitter.dir/build.make CMakeFiles/comEmitter.dir/bluetooth_com.c.o
+.PHONY : bluetooth_com.c.o
+
+bluetooth_com.i: bluetooth_com.c.i
+
+.PHONY : bluetooth_com.i
+
+# target to preprocess a source file
+bluetooth_com.c.i:
+	$(MAKE) -f CMakeFiles/comReceiver.dir/build.make CMakeFiles/comReceiver.dir/bluetooth_com.c.i
+	$(MAKE) -f CMakeFiles/comEmitter.dir/build.make CMakeFiles/comEmitter.dir/bluetooth_com.c.i
+.PHONY : bluetooth_com.c.i
+
+bluetooth_com.s: bluetooth_com.c.s
+
+.PHONY : bluetooth_com.s
+
+# target to generate assembly for a file
+bluetooth_com.c.s:
+	$(MAKE) -f CMakeFiles/comReceiver.dir/build.make CMakeFiles/comReceiver.dir/bluetooth_com.c.s
+	$(MAKE) -f CMakeFiles/comEmitter.dir/build.make CMakeFiles/comEmitter.dir/bluetooth_com.c.s
+.PHONY : bluetooth_com.c.s
+
 comEmitter.o: comEmitter.c.o
 
 .PHONY : comEmitter.o
@@ -387,6 +417,9 @@ help:
 	@echo "... audioReceiver.o"
 	@echo "... audioReceiver.i"
 	@echo "... audioReceiver.s"
+	@echo "... bluetooth_com.o"
+	@echo "... bluetooth_com.i"
+	@echo "... bluetooth_com.s"
 	@echo "... comEmitter.o"
 	@echo "... comEmitter.i"
 	@echo "... comEmitter.s"

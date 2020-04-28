@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/setr/projets/laboratoire5/PI
+CMAKE_SOURCE_DIR = /home/setr/projet/repo/SETR_Labo5_EQ1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/setr/projets/laboratoire5/PI/build
+CMAKE_BINARY_DIR = /home/setr/projet/repo/SETR_Labo5_EQ1/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/audioReceiver.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/audioReceiver.dir/flags.make
 
 CMakeFiles/audioReceiver.dir/pipe_com.c.o: CMakeFiles/audioReceiver.dir/flags.make
 CMakeFiles/audioReceiver.dir/pipe_com.c.o: ../pipe_com.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projets/laboratoire5/PI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/audioReceiver.dir/pipe_com.c.o"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audioReceiver.dir/pipe_com.c.o -c /home/setr/projets/laboratoire5/PI/pipe_com.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/audioReceiver.dir/pipe_com.c.o"
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audioReceiver.dir/pipe_com.c.o -c /home/setr/projet/repo/SETR_Labo5_EQ1/pipe_com.c
 
 CMakeFiles/audioReceiver.dir/pipe_com.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/audioReceiver.dir/pipe_com.c.i"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projets/laboratoire5/PI/pipe_com.c > CMakeFiles/audioReceiver.dir/pipe_com.c.i
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projet/repo/SETR_Labo5_EQ1/pipe_com.c > CMakeFiles/audioReceiver.dir/pipe_com.c.i
 
 CMakeFiles/audioReceiver.dir/pipe_com.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/audioReceiver.dir/pipe_com.c.s"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projets/laboratoire5/PI/pipe_com.c -o CMakeFiles/audioReceiver.dir/pipe_com.c.s
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projet/repo/SETR_Labo5_EQ1/pipe_com.c -o CMakeFiles/audioReceiver.dir/pipe_com.c.s
 
 CMakeFiles/audioReceiver.dir/audio.c.o: CMakeFiles/audioReceiver.dir/flags.make
 CMakeFiles/audioReceiver.dir/audio.c.o: ../audio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projets/laboratoire5/PI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/audioReceiver.dir/audio.c.o"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audioReceiver.dir/audio.c.o -c /home/setr/projets/laboratoire5/PI/audio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/audioReceiver.dir/audio.c.o"
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audioReceiver.dir/audio.c.o -c /home/setr/projet/repo/SETR_Labo5_EQ1/audio.c
 
 CMakeFiles/audioReceiver.dir/audio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/audioReceiver.dir/audio.c.i"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projets/laboratoire5/PI/audio.c > CMakeFiles/audioReceiver.dir/audio.c.i
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projet/repo/SETR_Labo5_EQ1/audio.c > CMakeFiles/audioReceiver.dir/audio.c.i
 
 CMakeFiles/audioReceiver.dir/audio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/audioReceiver.dir/audio.c.s"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projets/laboratoire5/PI/audio.c -o CMakeFiles/audioReceiver.dir/audio.c.s
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projet/repo/SETR_Labo5_EQ1/audio.c -o CMakeFiles/audioReceiver.dir/audio.c.s
 
 CMakeFiles/audioReceiver.dir/audioReceiver.c.o: CMakeFiles/audioReceiver.dir/flags.make
 CMakeFiles/audioReceiver.dir/audioReceiver.c.o: ../audioReceiver.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projets/laboratoire5/PI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/audioReceiver.dir/audioReceiver.c.o"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audioReceiver.dir/audioReceiver.c.o -c /home/setr/projets/laboratoire5/PI/audioReceiver.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/audioReceiver.dir/audioReceiver.c.o"
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audioReceiver.dir/audioReceiver.c.o -c /home/setr/projet/repo/SETR_Labo5_EQ1/audioReceiver.c
 
 CMakeFiles/audioReceiver.dir/audioReceiver.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/audioReceiver.dir/audioReceiver.c.i"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projets/laboratoire5/PI/audioReceiver.c > CMakeFiles/audioReceiver.dir/audioReceiver.c.i
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projet/repo/SETR_Labo5_EQ1/audioReceiver.c > CMakeFiles/audioReceiver.dir/audioReceiver.c.i
 
 CMakeFiles/audioReceiver.dir/audioReceiver.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/audioReceiver.dir/audioReceiver.c.s"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projets/laboratoire5/PI/audioReceiver.c -o CMakeFiles/audioReceiver.dir/audioReceiver.c.s
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projet/repo/SETR_Labo5_EQ1/audioReceiver.c -o CMakeFiles/audioReceiver.dir/audioReceiver.c.s
 
 # Object files for target audioReceiver
 audioReceiver_OBJECTS = \
@@ -111,7 +111,7 @@ audioReceiver: CMakeFiles/audioReceiver.dir/audioReceiver.c.o
 audioReceiver: CMakeFiles/audioReceiver.dir/build.make
 audioReceiver: /home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/libasound.so
 audioReceiver: CMakeFiles/audioReceiver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/setr/projets/laboratoire5/PI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable audioReceiver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable audioReceiver"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/audioReceiver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +124,6 @@ CMakeFiles/audioReceiver.dir/clean:
 .PHONY : CMakeFiles/audioReceiver.dir/clean
 
 CMakeFiles/audioReceiver.dir/depend:
-	cd /home/setr/projets/laboratoire5/PI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/setr/projets/laboratoire5/PI /home/setr/projets/laboratoire5/PI /home/setr/projets/laboratoire5/PI/build /home/setr/projets/laboratoire5/PI/build /home/setr/projets/laboratoire5/PI/build/CMakeFiles/audioReceiver.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/setr/projet/repo/SETR_Labo5_EQ1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/setr/projet/repo/SETR_Labo5_EQ1 /home/setr/projet/repo/SETR_Labo5_EQ1 /home/setr/projet/repo/SETR_Labo5_EQ1/build /home/setr/projet/repo/SETR_Labo5_EQ1/build /home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/audioReceiver.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/audioReceiver.dir/depend
 

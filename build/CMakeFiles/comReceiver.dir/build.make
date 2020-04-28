@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/setr/projets/laboratoire5/PI
+CMAKE_SOURCE_DIR = /home/setr/projet/repo/SETR_Labo5_EQ1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/setr/projets/laboratoire5/PI/build
+CMAKE_BINARY_DIR = /home/setr/projet/repo/SETR_Labo5_EQ1/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/comReceiver.dir/depend.make
@@ -59,46 +59,60 @@ include CMakeFiles/comReceiver.dir/flags.make
 
 CMakeFiles/comReceiver.dir/pipe_com.c.o: CMakeFiles/comReceiver.dir/flags.make
 CMakeFiles/comReceiver.dir/pipe_com.c.o: ../pipe_com.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projets/laboratoire5/PI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/comReceiver.dir/pipe_com.c.o"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/comReceiver.dir/pipe_com.c.o -c /home/setr/projets/laboratoire5/PI/pipe_com.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/comReceiver.dir/pipe_com.c.o"
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/comReceiver.dir/pipe_com.c.o -c /home/setr/projet/repo/SETR_Labo5_EQ1/pipe_com.c
 
 CMakeFiles/comReceiver.dir/pipe_com.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/comReceiver.dir/pipe_com.c.i"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projets/laboratoire5/PI/pipe_com.c > CMakeFiles/comReceiver.dir/pipe_com.c.i
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projet/repo/SETR_Labo5_EQ1/pipe_com.c > CMakeFiles/comReceiver.dir/pipe_com.c.i
 
 CMakeFiles/comReceiver.dir/pipe_com.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/comReceiver.dir/pipe_com.c.s"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projets/laboratoire5/PI/pipe_com.c -o CMakeFiles/comReceiver.dir/pipe_com.c.s
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projet/repo/SETR_Labo5_EQ1/pipe_com.c -o CMakeFiles/comReceiver.dir/pipe_com.c.s
+
+CMakeFiles/comReceiver.dir/bluetooth_com.c.o: CMakeFiles/comReceiver.dir/flags.make
+CMakeFiles/comReceiver.dir/bluetooth_com.c.o: ../bluetooth_com.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/comReceiver.dir/bluetooth_com.c.o"
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/comReceiver.dir/bluetooth_com.c.o -c /home/setr/projet/repo/SETR_Labo5_EQ1/bluetooth_com.c
+
+CMakeFiles/comReceiver.dir/bluetooth_com.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/comReceiver.dir/bluetooth_com.c.i"
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projet/repo/SETR_Labo5_EQ1/bluetooth_com.c > CMakeFiles/comReceiver.dir/bluetooth_com.c.i
+
+CMakeFiles/comReceiver.dir/bluetooth_com.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/comReceiver.dir/bluetooth_com.c.s"
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projet/repo/SETR_Labo5_EQ1/bluetooth_com.c -o CMakeFiles/comReceiver.dir/bluetooth_com.c.s
 
 CMakeFiles/comReceiver.dir/socket_com.c.o: CMakeFiles/comReceiver.dir/flags.make
 CMakeFiles/comReceiver.dir/socket_com.c.o: ../socket_com.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projets/laboratoire5/PI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/comReceiver.dir/socket_com.c.o"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/comReceiver.dir/socket_com.c.o -c /home/setr/projets/laboratoire5/PI/socket_com.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/comReceiver.dir/socket_com.c.o"
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/comReceiver.dir/socket_com.c.o -c /home/setr/projet/repo/SETR_Labo5_EQ1/socket_com.c
 
 CMakeFiles/comReceiver.dir/socket_com.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/comReceiver.dir/socket_com.c.i"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projets/laboratoire5/PI/socket_com.c > CMakeFiles/comReceiver.dir/socket_com.c.i
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projet/repo/SETR_Labo5_EQ1/socket_com.c > CMakeFiles/comReceiver.dir/socket_com.c.i
 
 CMakeFiles/comReceiver.dir/socket_com.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/comReceiver.dir/socket_com.c.s"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projets/laboratoire5/PI/socket_com.c -o CMakeFiles/comReceiver.dir/socket_com.c.s
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projet/repo/SETR_Labo5_EQ1/socket_com.c -o CMakeFiles/comReceiver.dir/socket_com.c.s
 
 CMakeFiles/comReceiver.dir/comReceiver.c.o: CMakeFiles/comReceiver.dir/flags.make
 CMakeFiles/comReceiver.dir/comReceiver.c.o: ../comReceiver.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projets/laboratoire5/PI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/comReceiver.dir/comReceiver.c.o"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/comReceiver.dir/comReceiver.c.o -c /home/setr/projets/laboratoire5/PI/comReceiver.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/comReceiver.dir/comReceiver.c.o"
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/comReceiver.dir/comReceiver.c.o -c /home/setr/projet/repo/SETR_Labo5_EQ1/comReceiver.c
 
 CMakeFiles/comReceiver.dir/comReceiver.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/comReceiver.dir/comReceiver.c.i"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projets/laboratoire5/PI/comReceiver.c > CMakeFiles/comReceiver.dir/comReceiver.c.i
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/setr/projet/repo/SETR_Labo5_EQ1/comReceiver.c > CMakeFiles/comReceiver.dir/comReceiver.c.i
 
 CMakeFiles/comReceiver.dir/comReceiver.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/comReceiver.dir/comReceiver.c.s"
-	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projets/laboratoire5/PI/comReceiver.c -o CMakeFiles/comReceiver.dir/comReceiver.c.s
+	/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/bin/arm-raspbian-linux-gnueabihf-g++ --sysroot=/home/setr/arm-cross-comp-env/arm-raspbian-linux-gnueabihf/arm-raspbian-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/setr/projet/repo/SETR_Labo5_EQ1/comReceiver.c -o CMakeFiles/comReceiver.dir/comReceiver.c.s
 
 # Object files for target comReceiver
 comReceiver_OBJECTS = \
 "CMakeFiles/comReceiver.dir/pipe_com.c.o" \
+"CMakeFiles/comReceiver.dir/bluetooth_com.c.o" \
 "CMakeFiles/comReceiver.dir/socket_com.c.o" \
 "CMakeFiles/comReceiver.dir/comReceiver.c.o"
 
@@ -106,11 +120,12 @@ comReceiver_OBJECTS = \
 comReceiver_EXTERNAL_OBJECTS =
 
 comReceiver: CMakeFiles/comReceiver.dir/pipe_com.c.o
+comReceiver: CMakeFiles/comReceiver.dir/bluetooth_com.c.o
 comReceiver: CMakeFiles/comReceiver.dir/socket_com.c.o
 comReceiver: CMakeFiles/comReceiver.dir/comReceiver.c.o
 comReceiver: CMakeFiles/comReceiver.dir/build.make
 comReceiver: CMakeFiles/comReceiver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/setr/projets/laboratoire5/PI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable comReceiver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable comReceiver"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/comReceiver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +138,6 @@ CMakeFiles/comReceiver.dir/clean:
 .PHONY : CMakeFiles/comReceiver.dir/clean
 
 CMakeFiles/comReceiver.dir/depend:
-	cd /home/setr/projets/laboratoire5/PI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/setr/projets/laboratoire5/PI /home/setr/projets/laboratoire5/PI /home/setr/projets/laboratoire5/PI/build /home/setr/projets/laboratoire5/PI/build /home/setr/projets/laboratoire5/PI/build/CMakeFiles/comReceiver.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/setr/projet/repo/SETR_Labo5_EQ1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/setr/projet/repo/SETR_Labo5_EQ1 /home/setr/projet/repo/SETR_Labo5_EQ1 /home/setr/projet/repo/SETR_Labo5_EQ1/build /home/setr/projet/repo/SETR_Labo5_EQ1/build /home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/comReceiver.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/comReceiver.dir/depend
 

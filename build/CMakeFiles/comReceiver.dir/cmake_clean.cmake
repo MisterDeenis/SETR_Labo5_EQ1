@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/comReceiver.dir/pipe_com.c.o"
+  "CMakeFiles/comReceiver.dir/bluetooth_com.c.o"
   "CMakeFiles/comReceiver.dir/socket_com.c.o"
   "CMakeFiles/comReceiver.dir/comReceiver.c.o"
   "comReceiver.pdb"

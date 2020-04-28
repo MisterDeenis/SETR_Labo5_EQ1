@@ -4,9 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/setr/projets/laboratoire5/PI/comReceiver.c" "/home/setr/projets/laboratoire5/PI/build/CMakeFiles/comReceiver.dir/comReceiver.c.o"
-  "/home/setr/projets/laboratoire5/PI/pipe_com.c" "/home/setr/projets/laboratoire5/PI/build/CMakeFiles/comReceiver.dir/pipe_com.c.o"
-  "/home/setr/projets/laboratoire5/PI/socket_com.c" "/home/setr/projets/laboratoire5/PI/build/CMakeFiles/comReceiver.dir/socket_com.c.o"
+  "/home/setr/projet/repo/SETR_Labo5_EQ1/bluetooth_com.c" "/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/comReceiver.dir/bluetooth_com.c.o"
+  "/home/setr/projet/repo/SETR_Labo5_EQ1/comReceiver.c" "/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/comReceiver.dir/comReceiver.c.o"
+  "/home/setr/projet/repo/SETR_Labo5_EQ1/pipe_com.c" "/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/comReceiver.dir/pipe_com.c.o"
+  "/home/setr/projet/repo/SETR_Labo5_EQ1/socket_com.c" "/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/comReceiver.dir/socket_com.c.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

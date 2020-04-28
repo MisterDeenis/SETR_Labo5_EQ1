@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/setr/projets/laboratoire5/PI/audio.c" "/home/setr/projets/laboratoire5/PI/build/CMakeFiles/audioReceiver.dir/audio.c.o"
-  "/home/setr/projets/laboratoire5/PI/audioReceiver.c" "/home/setr/projets/laboratoire5/PI/build/CMakeFiles/audioReceiver.dir/audioReceiver.c.o"
-  "/home/setr/projets/laboratoire5/PI/pipe_com.c" "/home/setr/projets/laboratoire5/PI/build/CMakeFiles/audioReceiver.dir/pipe_com.c.o"
+  "/home/setr/projet/repo/SETR_Labo5_EQ1/audio.c" "/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/audioReceiver.dir/audio.c.o"
+  "/home/setr/projet/repo/SETR_Labo5_EQ1/audioReceiver.c" "/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/audioReceiver.dir/audioReceiver.c.o"
+  "/home/setr/projet/repo/SETR_Labo5_EQ1/pipe_com.c" "/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/audioReceiver.dir/pipe_com.c.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,10 +6,10 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 find_package(ALSA REQUIRED)
 
-SET_SOURCE_FILES_PROPERTIES(pipe_com.c socket_com.c audioReceiver.c comEmitter.c comReceiver.c audioEmitter.c audio.c PROPERTIES LANGUAGE CXX )
+SET_SOURCE_FILES_PROPERTIES(pipe_com.c socket_com.c bluetooth_com.c audioReceiver.c comEmitter.c comReceiver.c audioEmitter.c audio.c PROPERTIES LANGUAGE CXX )
 set(SOURCE_AUDIO_RECEIVER pipe_com.c audio.c audioReceiver.c)
-set(SOURCE_COM_EMITTER pipe_com.c socket_com.c comEmitter.c)
-set(SOURCE_COM_RECEIVER pipe_com.c socket_com.c comReceiver.c)
+set(SOURCE_COM_EMITTER pipe_com.c bluetooth_com.c  socket_com.c comEmitter.c)
+set(SOURCE_COM_RECEIVER pipe_com.c bluetooth_com.c  socket_com.c comReceiver.c)
 set(SOURCE_AUDIO_EMITTER pipe_com.c audio.c audioEmitter.c)
 
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Og -g")
