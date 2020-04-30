@@ -39,7 +39,7 @@ int main(int argc, char* argv[]){
         isDebug = 1;
         schedPolicy = SCHED_OTHER;
     }else{
-        while((option = getopt(argc, argv, "s:d:")) != -1){
+        while((option = getopt(argc, argv, "s:f:")) != -1){
             argPos++;
             switch (option){
                 case 's': 
@@ -55,7 +55,7 @@ int main(int argc, char* argv[]){
                         schedPolicy = SCHED_FIFO;
                     }
                     break;
-				case 'd':
+				case 'f':
 					disto_gain = atoi(&optarg);
 					break;
                 default:
