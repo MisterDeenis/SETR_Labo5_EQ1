@@ -13,13 +13,18 @@
 #include <bluetooth/bluetooth.h>
 #include <bluetooth/rfcomm.h>
 #include <bluetooth/hci.h>
+#include <bluetooth/hci_lib.h>
 
-int sock_fd;
+#include "constants.h"
+#include "errno.h"
+
+//add client : B8:27:EB:BE:49:8A
+//add serveur : B8:27:EB:0C:71:D7 
 
 int init_server_bluetooth(){
     
     int ret_fd;
-    sock_fd = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
+    int sock_fd = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
     if(sock_fd == -1){
         printf("Erreur ouverture socket\n");
         exit(1);
@@ -27,22 +32,28 @@ int init_server_bluetooth(){
 
     struct sockaddr_rc addr;
     addr.rc_family = AF_BLUETOOTH;
-    bacpy(&addr.rc_bdaddr, BDADDR_ANY);
+    bdaddr_t tmp = { };
+    bacpy(&addr.rc_bdaddr, &tmp);
+    //str2ba(ADDR_SERVEUR,&addr.rc_bdaddr);
     addr.rc_channel = htobs(4);
     int alen = sizeof(addr);
 
-    if(bind(sock, (struct sockaddr *)&addr, alen) < 0)
+    if(bind(sock_fd, (struct sockaddr *)&addr, alen) < 0)
     {
       perror("bind");
       exit(1);
     }
 
-    listen(sock, 3);
+    int ret = listen(sock_fd, 10);
+    fprintf(stderr, "Retour listen %i\n", ret);
 
+    fprintf(stderr, "Waiting for client\n");
     if((ret_fd = accept(sock_fd, (struct sockaddr *) &addr, (socklen_t *)&alen)) < 0){
         printf("Erreur lors du accept\n");
         exit(1);
     }
+
+    fprintf(stderr, "Client connected\n");
 
     return ret_fd;
 }
@@ -51,38 +62,41 @@ int init_client_bluetooth(){
 
     struct sockaddr_rc laddr, raddr;
 
-
-    sock_fd = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
+    int sock_fd = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
     if(sock_fd == -1){
         printf("Erreur ouverture socket\n");
         exit(1);
     }
 
-    struct hci_dev_info di;
-    if(hci_devinfo(0, &di) < 0) 
+    /*struct hci_dev_info di;
+    if(hci_devinfo(0, &di))
     {
       printf("Erreur hci\n");
       exit(1);
-    }
+    }*/
 
     laddr.rc_family  = AF_BLUETOOTH;
-    laddr.rc_bdaddr = di.bdaddr;
+    str2ba(ADDR_CLIENT,&raddr.rc_bdaddr);
     laddr.rc_channel = 0;
 
     raddr.rc_family = AF_BLUETOOTH;
-    str2ba(argv[1],&raddr.rc_bdaddr);
+    str2ba("01:23:45:67:89:AB",&raddr.rc_bdaddr);
     raddr.rc_channel = 4;
     
-    if(bind(sock_fd, (struct sockaddr *)&laddr, sizeof(laddr)) < 0)
+    /*if((ret = bind(sock_fd, (struct sockaddr *)&laddr, sizeof(laddr))) < 0)
     {
       printf("Erreur, bind socket client");
       exit(1);
-    }
-
-    while(connect(sock_fd, (struct sockaddr *)&raddr, sizeof(raddr)) < 0){
+    }*/
+    
+    fprintf(stderr, "Trying to connect to server\n");
+    
+    int ret = 0;
+    while((ret = connect(sock_fd, (struct sockaddr *)&raddr, sizeof(raddr))) < 0){
         usleep(50);
-        fprintf(stderr, "Erreur lors du connect du socket\n");
+        //fprintf(stderr, "Retour de connect %i\n", ret);
     }
+    fprintf(stderr, "Connected to server\n");
     
     return sock_fd;
 }

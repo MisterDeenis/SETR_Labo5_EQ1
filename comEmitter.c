@@ -70,6 +70,10 @@ int main(int argc, char* argv[]){
         readerPipe = argv[argc - 1];
     }
 
+    //init signal
+    signal(SIGTERM, gereSignal);
+    signal(SIGPIPE, gereSignal);
+
     //pipe init
     int pipeFd = init_reader_pipe(readerPipe);
     if(pipeFd < 0){
@@ -101,7 +105,7 @@ int main(int argc, char* argv[]){
         sched_yield(); //peut-être remplacer par un sleep...
     }
 
-    close_writer_pipe(readerPipe, pipeFd);
+    close_reader_pipe(pipeFd);
     close_client_socket(socketFd);
     free(sampleBuf);
 }

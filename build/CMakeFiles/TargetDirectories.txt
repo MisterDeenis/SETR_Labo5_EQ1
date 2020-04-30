@@ -1,6 +1,0 @@
-/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/rebuild_cache.dir
-/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/audioEmitter.dir
-/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/edit_cache.dir
-/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/comReceiver.dir
-/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/audioReceiver.dir
-/home/setr/projet/repo/SETR_Labo5_EQ1/build/CMakeFiles/comEmitter.dir

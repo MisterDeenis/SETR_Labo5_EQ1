@@ -22,10 +22,10 @@ add_executable(audioReceiver ${SOURCE_AUDIO_RECEIVER})
 target_link_libraries(audioReceiver rt ${ALSA_LIBRARIES} Threads::Threads)
 
 add_executable(comEmitter ${SOURCE_COM_EMITTER})
-target_link_libraries(comEmitter rt Threads::Threads)
+target_link_libraries(comEmitter rt ${BlueZ_LIBRARIES} -lbluetooth Threads::Threads)
 
 add_executable(comReceiver ${SOURCE_COM_RECEIVER})
-target_link_libraries(comReceiver rt Threads::Threads)
+target_link_libraries(comReceiver rt ${BlueZ_LIBRARIES} -lbluetooth Threads::Threads)
 
 add_executable(audioEmitter ${SOURCE_AUDIO_EMITTER})
-target_link_libraries(audioEmitter rt ${ALSA_LIBRARIES} Threads::Threads)
+target_link_libraries(audioEmitter rt  ${ALSA_LIBRARIES} Threads::Threads)

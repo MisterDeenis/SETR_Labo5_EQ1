@@ -10,12 +10,10 @@
 #include "constants.h"
 #include "errno.h"
 
-int sock_fd;
-
 int init_server_socket(){
     int ret_fd;
 
-    sock_fd = socket(AF_INET, SOCK_STREAM, 0);
+    int sock_fd = socket(AF_INET, SOCK_STREAM, 0);
     if(sock_fd == -1){
         fprintf(stderr, "Erreur ouverture socket\n");
         exit(1);
@@ -49,7 +47,7 @@ int init_server_socket(){
 }
 
 int init_client_socket(){
-    sock_fd = socket(AF_INET, SOCK_STREAM, 0);
+    int sock_fd = socket(AF_INET, SOCK_STREAM, 0);
     if(sock_fd == -1){
         fprintf(stderr, "Erreur ouverture socket\n");
         exit(1);

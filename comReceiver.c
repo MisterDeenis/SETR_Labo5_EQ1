@@ -69,6 +69,10 @@ int main(int argc, char* argv[]){
         writerPipe = argv[argc - 1];
     }
 
+    //init signal
+    signal(SIGTERM, gereSignal);
+    signal(SIGPIPE, gereSignal);
+
     //pipe init
     int pipeFd = init_writer_pipe(writerPipe);
     if(pipeFd < 0){
@@ -101,7 +105,7 @@ int main(int argc, char* argv[]){
         sched_yield(); //peut-être remplacer par un sleep...
     }
 
-    //close_reader_pipe(pipeFd);
+    close_writer_pipe(writerPipe, pipeFd);
     close_server_socket(socketFd);
     free(sampleBuf);
 }
