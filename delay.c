@@ -106,7 +106,7 @@ int main(int argc, char* argv[]){
     }
 
 	int buf_head = 0;
-	char *bufMem = (char*) malloc(sizeof(char) * delay_time);
+	uint16_t *bufMem = (uint16_t*) malloc(sizeof(uint16_t) * delay_time);
 	memset(bufMem, 0, sizeof(char) * delay_time);
     char *sampleBuf = (char*) malloc(sizeof(char) * NBR_SAMPLE);
 
@@ -114,39 +114,17 @@ int main(int argc, char* argv[]){
     while(progOK){
         pipe_read(readerFd, sampleBuf, NBR_SAMPLE);
         
+		uint16_t *sampleBuf_16 = (uint16_t*) sampleBuf;
+		int nbrSample = (NBR_SAMPLE / 2);
 		// Traitement pour mettre le délais
-		for(int i = 0; i < NBR_SAMPLE; i++){
-			int pos = i - delay_time;
-			int delayVal = 0;
-			if(pos < 0){
-				pos = (buf_head - pos) % delay_time;
-				delayVal = bufMem[pos];
-			}else{
-				delayVal = sampleBuf[pos];
-			}
-			
-			sampleBuf[i] = sampleBuf[i] + (delayVal * delay_factor / 100);
+		for(int i = nbrSample - 1; i >= 0; i--){
+			uint16_t sample = sampleBuf_16[i];
+			sample = sample + (bufMem[buf_head] * delay_factor / 100);
+			sampleBuf[i] = sample;
+			bufMem[buf_head] = sample;
+			buf_head = (buf_head + 1) % delay_time;
 		}
 		
-		//Traitement pour mettre en mémoire les échantillons
-		int nbrSampleToCpy = (delay_time < NBR_SAMPLE) ? delay_time : NBR_SAMPLE;
-		//première copie
-		if(buf_head + nbrSampleToCpy > delay_time){
-			//2 copies doivent être faites
-			int nbrSampleToCpyFirst = delay_time - buf_head;
-			memcpy((bufMem + buf_head), sampleBuf, nbrSampleToCpyFirst);
-			nbrSampleToCpy -= nbrSampleToCpyFirst;
-			memcpy(bufMem, (sampleBuf + nbrSampleToCpyFirst), nbrSampleToCpy);
-			buf_head = (buf_head + nbrSampleToCpy) % delay_time;			
-		}else{
-			//1 seule copie est faites
-			memcpy((bufMem + buf_head), sampleBuf, nbrSampleToCpy);
-			buf_head = (buf_head + nbrSampleToCpy) % delay_time
-		}
-		
-		
-        
-
         pipe_writer(writerFd, sampleBuf, NBR_SAMPLE);
         sched_yield(); //peut-être remplacer par un sleep...
     }
