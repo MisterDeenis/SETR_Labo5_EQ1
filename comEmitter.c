@@ -12,6 +12,7 @@
 
 #include "pipe_com.h"
 #include "socket_com.h"
+#include "bluetooth_com.h"
 #include "constants.h"
 
 const char debugPipeSrc[] = "/tmp/audioReceiverPipe\0";
@@ -29,7 +30,6 @@ int main(int argc, char* argv[]){
     char *sval = NULL;
     int schedPolicy = SCHED_OTHER;
     int isDebug = 0;
-    struct sched_param param;
 
     int argPos = 0;
     int option;
@@ -38,7 +38,6 @@ int main(int argc, char* argv[]){
         printf("comEmitter : debug option\n");
         isDebug = 1;
         schedPolicy = SCHED_RR;
-        param.sched_priority = 99;
     }else{
         while((option = getopt(argc, argv, "s:")) != -1){
             argPos++;
@@ -89,6 +88,8 @@ int main(int argc, char* argv[]){
     }
 
     //sched init
+    struct sched_param param;
+    param.sched_priority = 99;
     if(sched_setscheduler(0, schedPolicy, &param) != 0){
             printf("comEmitter : Erreur lors du changement d'ordonnancement.\n");
             exit(1);

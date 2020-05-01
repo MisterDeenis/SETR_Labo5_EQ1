@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <time.h>
+#include <sys/time.h>
 #include <vorbis/vorbisenc.h>
 #include "audio.h"
 
@@ -33,7 +34,6 @@ int main(int argc, char* argv[]){
 
     char *sval = NULL;
     int schedPolicy = SCHED_RR;
-    struct sched_param param;
     int isDebug = 0;
 
     int argPos = 0;
@@ -43,7 +43,6 @@ int main(int argc, char* argv[]){
         printf("debug option\n");
         isDebug = 1;
         schedPolicy = SCHED_RR;
-        param.sched_priority = 99;
     }else{
         while((option = getopt(argc, argv, "s:")) != -1){
             argPos++;
@@ -87,6 +86,8 @@ int main(int argc, char* argv[]){
     }
 
     //sched init
+    struct sched_param param;
+    param.sched_priority = 99;
     if(sched_setscheduler(0, schedPolicy, &param) != 0){
             printf("Erreur lors du changement d'ordonnancement. %i\n",errno);
             exit(1);
@@ -98,6 +99,10 @@ int main(int argc, char* argv[]){
     snd_pcm_uframes_t frames = NBR_SAMPLE;
     snd_pcm_t *playback_handle = audio_init(DEV_SPEAKER, 1, 1, &frames, &rate);
 
+    int nbSample = 0;
+
+    struct timeval timeLast;
+    gettimeofday(&timeLast, NULL);
     while(progOK){
         int bytes_read;
         if ((bytes_read = pipe_read(pipeFd, sampleBuf, NBR_SAMPLE*2)) < 0){
@@ -107,8 +112,17 @@ int main(int argc, char* argv[]){
         //Code pour faire jouer le son
 
         if (bytes_read > 0){
-            //fprintf(stderr, "sampleBuf = %s\n", sampleBuf);
+            nbSample += bytes_read;
             audio_write(playback_handle, sampleBuf, NBR_SAMPLE);
+        }
+
+        struct timeval timeCourant;
+        gettimeofday(&timeCourant, NULL);
+        int intervalTimeStat = timeCourant.tv_sec - timeLast.tv_sec;
+        if(intervalTimeStat > 1){
+            fprintf(stderr, "bytes/s : %i\n", nbSample/intervalTimeStat/2);
+            timeLast = timeCourant;
+            nbSample = 0;
         }
 
         sched_yield(); //peut-être remplacer par un sleep...

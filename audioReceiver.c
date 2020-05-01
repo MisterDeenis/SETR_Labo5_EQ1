@@ -36,7 +36,6 @@ int main(int argc, char* argv[]){
     char *sval = NULL;
     int schedPolicy = SCHED_OTHER;
     int isDebug = 0;
-    struct sched_param param;
 
     int argPos = 0;
     int option;
@@ -45,7 +44,7 @@ int main(int argc, char* argv[]){
         printf("audioReceiver : debug option\n");
         isDebug = 1;
         schedPolicy = SCHED_RR;
-        param.sched_priority = 99;
+        
     }else{
         while((option = getopt(argc, argv, "s:")) != -1){
             argPos++;
@@ -91,6 +90,8 @@ int main(int argc, char* argv[]){
 
     //sched init
     int test;
+    struct sched_param param;
+    param.sched_priority = 99;
     if((test = sched_setscheduler(0, schedPolicy, &param)) != 0){
             printf("audioReceiver : Erreur lors du changement d'ordonnancement : %i.\n", test);
             exit(1);
@@ -110,7 +111,6 @@ int main(int argc, char* argv[]){
         //mettre les sample dans sampleBuf
 
         audio_read(capture_handle, sampleBuf, buffer_frames);
-        //fprintf(stderr, "sampleBuf = %s\n", sampleBuf);
 
         pipe_write(pipeFd, sampleBuf, buffer_frames*2);
 

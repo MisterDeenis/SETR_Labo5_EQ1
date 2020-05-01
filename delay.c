@@ -6,6 +6,8 @@
 
 #include <signal.h>
 
+#include <stddef.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -13,8 +15,8 @@
 #include "pipe_com.h"
 #include "constants.h"
 
-const char debugPipeSrc[] = "/audioReceiverPipe\0";
-const char debugPipeDest[] = "/comEmitterPipe\0";
+char debugPipeSrc[] = "/tmp/audioReceiverPipe\0";
+char debugPipeDest[] = "/tmp/comEmitterPipe\0";
 
 int progOK = 1;
 
@@ -57,10 +59,10 @@ int main(int argc, char* argv[]){
                     }
                     break;
 				case 't':
-					delay_time = atoi(&optarg);
+					delay_time = atoi(optarg);
 					break;
 				case 'f':
-					delay_factor = atoi(&optarg);
+					delay_factor = atoi(optarg);
 					break;
                 default:
                     printf("Argument inconnu : %d\n", option);
@@ -69,14 +71,14 @@ int main(int argc, char* argv[]){
         }
     }
 
-    const char *readerPipe = NULL;
-    const char *writePipe = NULL;
+    char *readerPipe = NULL;
+    char *writerPipe = NULL;
     if(isDebug == 1){
         readerPipe = debugPipeSrc;
         writerPipe = debugPipeDest;
     }else{
-        readerPipe = argv[argc - 2];
-        writerPipe = argv[argc - 1];
+        readerPipe = debugPipeSrc;
+        writerPipe = debugPipeDest;
     }
 
     //init signal
@@ -117,19 +119,18 @@ int main(int argc, char* argv[]){
 		uint16_t *sampleBuf_16 = (uint16_t*) sampleBuf;
 		int nbrSample = (NBR_SAMPLE / 2);
 		// Traitement pour mettre le délais
-		for(int i = nbrSample - 1; i >= 0; i--){
-			uint16_t sample = sampleBuf_16[i];
-			sample = sample + (bufMem[buf_head] * delay_factor / 100);
-			sampleBuf[i] = sample;
-			bufMem[buf_head] = sample;
-			buf_head = (buf_head + 1) % delay_time;
-		}
+        for(int i = 0; i < nbrSample; i++){
+            uint16_t sample = sampleBuf_16[i];
+            sample = sample + ((bufMem[buf_head] * (uint16_t)delay_factor) / (uint16_t)100);
+            bufMem[buf_head] = sample;
+            buf_head = (buf_head + 1) % delay_time;
+        }
 		
-        pipe_writer(writerFd, sampleBuf, NBR_SAMPLE);
+        pipe_write(writerFd, sampleBuf, NBR_SAMPLE);
         sched_yield(); //peut-être remplacer par un sleep...
     }
 
-    close_reader_pipe(readerPipe);
-    close_writer_pipe(writePipe, writerFd);
+    close_reader_pipe(readerFd);
+    close_writer_pipe(writerPipe, writerFd);
     free(sampleBuf);
 }

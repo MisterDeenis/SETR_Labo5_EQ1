@@ -30,12 +30,11 @@ int init_server_bluetooth(){
         exit(1);
     }
 
+    bdaddr_t bdaddr_any = {0,0,0,0,0,0};
     struct sockaddr_rc addr;
     addr.rc_family = AF_BLUETOOTH;
-    bdaddr_t tmp = { };
-    bacpy(&addr.rc_bdaddr, &tmp);
-    //str2ba(ADDR_SERVEUR,&addr.rc_bdaddr);
-    addr.rc_channel = htobs(4);
+    addr.rc_bdaddr = bdaddr_any;
+    addr.rc_channel = htobs(1);
     int alen = sizeof(addr);
 
     if(bind(sock_fd, (struct sockaddr *)&addr, alen) < 0)
@@ -44,11 +43,12 @@ int init_server_bluetooth(){
       exit(1);
     }
 
-    int ret = listen(sock_fd, 10);
+    int ret = listen(sock_fd, 4);
     fprintf(stderr, "Retour listen %i\n", ret);
 
     fprintf(stderr, "Waiting for client\n");
-    if((ret_fd = accept(sock_fd, (struct sockaddr *) &addr, (socklen_t *)&alen)) < 0){
+    struct sockaddr_rc raddr;
+    if((ret_fd = accept(sock_fd, (struct sockaddr *) &raddr, (socklen_t *)&alen)) < 0){
         printf("Erreur lors du accept\n");
         exit(1);
     }
@@ -63,38 +63,29 @@ int init_client_bluetooth(){
     struct sockaddr_rc laddr, raddr;
 
     int sock_fd = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
-    if(sock_fd == -1){
+    if(sock_fd < 0){
         printf("Erreur ouverture socket\n");
         exit(1);
     }
 
-    /*struct hci_dev_info di;
-    if(hci_devinfo(0, &di))
+    struct hci_dev_info di;
+    if(hci_devinfo(0, &di) < 0)
     {
       printf("Erreur hci\n");
       exit(1);
-    }*/
+    }
 
     laddr.rc_family  = AF_BLUETOOTH;
-    str2ba(ADDR_CLIENT,&raddr.rc_bdaddr);
-    laddr.rc_channel = 0;
-
-    raddr.rc_family = AF_BLUETOOTH;
-    str2ba("01:23:45:67:89:AB",&raddr.rc_bdaddr);
-    raddr.rc_channel = 4;
-    
-    /*if((ret = bind(sock_fd, (struct sockaddr *)&laddr, sizeof(laddr))) < 0)
-    {
-      printf("Erreur, bind socket client");
-      exit(1);
-    }*/
+    str2ba(ADDR_CLIENT,&laddr.rc_bdaddr);
+    laddr.rc_channel = 1;
     
     fprintf(stderr, "Trying to connect to server\n");
     
     int ret = 0;
-    while((ret = connect(sock_fd, (struct sockaddr *)&raddr, sizeof(raddr))) < 0){
+    while((ret = connect(sock_fd, (struct sockaddr *)&laddr, sizeof(laddr))) < 0){
         usleep(50);
-        //fprintf(stderr, "Retour de connect %i\n", ret);
+        fprintf(stderr, "Retour de connect %i\n", ret);
+        fprintf(stderr, "errno : %i\n", errno);
     }
     fprintf(stderr, "Connected to server\n");
     

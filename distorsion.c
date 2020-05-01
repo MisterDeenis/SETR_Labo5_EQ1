@@ -6,6 +6,8 @@
 
 #include <signal.h>
 
+#include <stddef.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -13,8 +15,8 @@
 #include "pipe_com.h"
 #include "constants.h"
 
-const char debugPipeSrc[] = "/audioReceiverPipe\0";
-const char debugPipeDest[] = "/comEmitterPipe\0";
+char debugPipeSrc[] = "/tmp/audioReceiverPipe\0";
+char debugPipeDest[] = "/tmp/comEmitterPipe\0";
 
 int progOK = 1;
 
@@ -56,7 +58,7 @@ int main(int argc, char* argv[]){
                     }
                     break;
 				case 'f':
-					disto_gain = atoi(&optarg);
+					disto_gain = atoi(optarg);
 					break;
                 default:
                     printf("Argument inconnu : %d\n", option);
@@ -65,14 +67,14 @@ int main(int argc, char* argv[]){
         }
     }
 
-    const char *readerPipe = NULL;
-    const char *writePipe = NULL;
+    char *readerPipe = NULL;
+    char *writerPipe = NULL;
     if(isDebug == 1){
         readerPipe = debugPipeSrc;
         writerPipe = debugPipeDest;
     }else{
-        readerPipe = argv[argc - 2];
-        writerPipe = argv[argc - 1];
+        readerPipe = debugPipeSrc;
+        writerPipe = debugPipeDest;
     }
 
     //init signal
@@ -121,11 +123,11 @@ int main(int argc, char* argv[]){
 			sampleBuf_16[i] = (uint16_t) sample;
 		}
 
-        pipe_writer(writerFd, sampleBuf, NBR_SAMPLE);
+        pipe_write(writerFd, sampleBuf, NBR_SAMPLE);
         sched_yield(); //peut-être remplacer par un sleep...
     }
 
-    close_reader_pipe(readerPipe);
-    close_writer_pipe(writePipe, writerFd);
+    close_reader_pipe(readerFd);
+    close_writer_pipe(writerPipe, writerFd);
     free(sampleBuf);
 }
